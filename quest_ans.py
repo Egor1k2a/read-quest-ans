@@ -52,7 +52,7 @@ async def test(
                 answers = text[begin+len(quest):end].strip()
                 answers_list = answers.split('\n')
                 for i in answers_list:
-                    if i[0] == '~':
+                    if i[0] == '~' or i[-1] == '+':
                         if i[-1] == '+':
                             cleaned_i = i[0:-1]
                             cleaned_i = cleaned_i[0:-1] if cleaned_i[-1] == ';' else cleaned_i
