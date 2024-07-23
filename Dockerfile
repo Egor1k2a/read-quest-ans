@@ -17,4 +17,4 @@ RUN /bin/bash -c 'chmod -R 740 /app \
 
 EXPOSE 8000
 
-CMD ["python3", "-m" , "quest_ans.py"]
+CMD ["python3", "-m" , "src"]
