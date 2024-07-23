@@ -39,7 +39,7 @@ async def test(
     beg_beg = 0
     if quest:
         true_answers_list = []
-        with open(f'{this_folder}/myans.txt', 'r', encoding="utf-8") as f:
+        with open(f'{this_folder}/src/myans.txt', 'r', encoding="utf-8") as f:
             text = f.read()
         for c in range(text.count(quest)):
             begin = text.find(quest, beg_beg)
