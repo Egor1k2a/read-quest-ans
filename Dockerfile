@@ -15,4 +15,6 @@ RUN /bin/bash -c 'chmod -R 740 /app \
                   && apt clean \
                   && apt autoremove'
 
+EXPOSE 8000
+
 CMD ["python3", "-m" , "quest_ans.py"]
