@@ -7,8 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 tags_metadata = [
     {
-        'name': 'RESEARCH UPLOADING',
-        'description': 'Выгрузка результатов исследований.',
+        'name': 'SEARCH ANSWERS',
+        'description': 'API для поиска правильных ответов.',
     }
 ]
 
@@ -16,8 +16,8 @@ origin_endpoint = ['https://iomqt-vo.edu.rosminzdrav.ru']
 
 app = FastAPI(
     root_path="/api",
-    title='API for RESEARCH UPLOADING',
-    description='API для выгрузки результатов исследований',
+    title='API for SEARCH ANSWERS',
+    description='API для поиска правильных ответов',
     version='0.1.0',
     openapi_tags=tags_metadata,
 )
@@ -65,13 +65,3 @@ async def test(
         return true_answers_list
     else:
         raise HTTPException(status_code=404, detail='Нет такого вопроса')
-
-
-# if __name__ == "__main__":
-#     uvicorn.run(
-#         'quest_ans:app',
-#         host="0.0.0.0",
-#         port=8000,
-#         reload=True
-#     )
-
