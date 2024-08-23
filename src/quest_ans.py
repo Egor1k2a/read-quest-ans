@@ -35,8 +35,8 @@ app.add_middleware(
 async def test(
         quest: str = None
 ):
-    quest = quest.replace('a', 'а')
-    quest = quest.replace('o', 'о')
+    # quest = quest.replace('a', 'а')
+    # quest = quest.replace('o', 'о')
     this_folder = os.getcwd()
     beg_beg = 0
     if quest:
@@ -61,8 +61,8 @@ async def test(
                             cleaned_i = cleaned_i[0:-1] if cleaned_i[-1] == '.' else cleaned_i
                             cleaned_i = cleaned_i[1:] if cleaned_i[0] == '~' else cleaned_i
                             cleaned_i = cleaned_i[2:].strip()
-                            cleaned_i = cleaned_i.replace('а', 'a')
-                            cleaned_i = cleaned_i.replace('о', 'o')
+                            # cleaned_i = cleaned_i.replace('а', 'a')
+                            # cleaned_i = cleaned_i.replace('о', 'o')
                             true_answers_list.append(cleaned_i)
             else:
                 raise HTTPException(status_code=404, detail='Нет такого вопроса')
