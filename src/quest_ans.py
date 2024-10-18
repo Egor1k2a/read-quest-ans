@@ -40,6 +40,7 @@ async def test(
     this_folder = os.getcwd()
     beg_beg = 0
     if quest:
+        quest += '\n'
         true_answers_list = []
         with open(f'{this_folder}/src/myans.txt', 'r', encoding="utf-8") as f:
             text = f.read()
