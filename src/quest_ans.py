@@ -69,8 +69,8 @@ async def test(
                 raise HTTPException(status_code=404, detail='Нет такого вопроса')
 
         if len(true_answers_list) == 0:
-            quest = quest.replace('а', 'a')
-            quest = quest.replace('о', 'o')
+            quest = quest.replace('a', 'а')
+            quest = quest.replace('o', 'о')
             for c in range(text.count(quest)):
                 begin = text.find(quest, beg_beg)
                 beg_beg = begin + len(quest)
