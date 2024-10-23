@@ -129,6 +129,10 @@ async def test(
             new_i = i.replace('а', 'a')
             new_i = new_i.replace('о', 'o')
             new_true_answers_list.append(new_i)
+
+            new_i = i.replace('a', 'а')
+            new_i = new_i.replace('o', 'о')
+            new_true_answers_list.append(new_i)
         return true_answers_list + new_true_answers_list
     else:
         raise HTTPException(status_code=404, detail='Нет такого вопроса')
