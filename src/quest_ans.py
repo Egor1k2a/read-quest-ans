@@ -96,6 +96,34 @@ async def test(
                 else:
                     raise HTTPException(status_code=404, detail='Нет такого вопроса')
 
+        if len(true_answers_list) == 0:
+            quest = quest.replace('а', 'a')
+            quest = quest.replace('о', 'o')
+            for c in range(text.count(quest)):
+                begin = text.find(quest, beg_beg)
+                beg_beg = begin + len(quest)
+                if begin != -1:
+                    num_quest = text[text.rfind('\n', 0, begin):begin - 2].strip()
+                    end1 = text.find('\n\n', begin + len(quest))
+                    end2 = text.find(f'{int(num_quest) + 1}. ', begin + len(quest))
+                    end = min(filter(lambda val: val > 0, [end1, end2]))
+                    answers = text[begin + len(quest):end].strip()
+                    answers_list = answers.split('\n')
+                    for i in answers_list:
+                        if i[0] == '~' or i[-1] == '+':
+                            if i[-1] == '+':
+                                cleaned_i = i[0:-1]
+                                cleaned_i = cleaned_i[0:-1] if cleaned_i[-1] == ';' else cleaned_i
+                                cleaned_i = cleaned_i[0:-1] if cleaned_i[-1] == '.' else cleaned_i
+                                cleaned_i = cleaned_i[1:] if cleaned_i[0] == '~' else cleaned_i
+                                cleaned_i = cleaned_i[2:].strip()
+                                # cleaned_i = cleaned_i.replace('а', 'a')
+                                # cleaned_i = cleaned_i.replace('о', 'o')
+                                true_answers_list.append(cleaned_i)
+                    # return true_answers_list
+                else:
+                    raise HTTPException(status_code=404, detail='Нет такого вопроса')
+
         new_true_answers_list = []
         for i in true_answers_list:
             new_i = i.replace('а', 'a')
