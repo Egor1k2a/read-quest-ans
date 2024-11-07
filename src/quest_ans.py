@@ -12,7 +12,7 @@ tags_metadata = [
     }
 ]
 
-origin_endpoint = ['https://iomqt-vo.edu.rosminzdrav.ru', 'https://iomqt-spo.edu.rosminzdrav.ru']
+origin_endpoint = ['https://iomqt-vo.edu.rosminzdrav.ru', 'https://iomqt-spo.edu.rosminzdrav.ru', 'https://iomqt-nmd.edu.rosminzdrav.ru']
 
 app = FastAPI(
     root_path="/api",
