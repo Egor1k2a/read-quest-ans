@@ -136,4 +136,3 @@ async def test(
         return true_answers_list + new_true_answers_list
     else:
         raise HTTPException(status_code=404, detail='Нет такого вопроса')
-
