@@ -49,6 +49,7 @@ async def test(
             beg_beg = begin + len(quest)
             if begin != -1:
                 num_quest = text[text.rfind('\n', 0, begin):begin-2].strip()
+                num_quest = num_quest.replace('.', '') if '.' in num_quest else num_quest
                 end1 = text.find('\n\n', begin+len(quest))
                 end2 = text.find(f'{int(num_quest) + 1}. ', begin+len(quest))
                 end = min(filter(lambda val: val > 0, [end1, end2]))
@@ -76,6 +77,7 @@ async def test(
                 beg_beg = begin + len(quest)
                 if begin != -1:
                     num_quest = text[text.rfind('\n', 0, begin):begin - 2].strip()
+                    num_quest = num_quest.replace('.', '') if '.' in num_quest else num_quest
                     end1 = text.find('\n\n', begin + len(quest))
                     end2 = text.find(f'{int(num_quest) + 1}. ', begin + len(quest))
                     end = min(filter(lambda val: val > 0, [end1, end2]))
@@ -104,6 +106,7 @@ async def test(
                 beg_beg = begin + len(quest)
                 if begin != -1:
                     num_quest = text[text.rfind('\n', 0, begin):begin - 2].strip()
+                    num_quest = num_quest.replace('.', '') if '.' in num_quest else num_quest
                     end1 = text.find('\n\n', begin + len(quest))
                     end2 = text.find(f'{int(num_quest) + 1}. ', begin + len(quest))
                     end = min(filter(lambda val: val > 0, [end1, end2]))
